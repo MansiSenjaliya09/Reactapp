@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th,
+td {
+    text-align: left;
+    padding: 10px;
+}
+tr:nth-child(even) {
+    background-color: #ebc1e4;
+}
+tr:hover {
+    background-color: #d880cc;
+   color: rgb(219, 211, 211);
+}
