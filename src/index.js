@@ -15,7 +15,11 @@ import reportWebVitals from './reportWebVitals';
 //import Contactform from './Contactform';
 // import Employee from './pages/Employee';
 // import Contactto from './pages/Contactto';
-import Myformhook from './pages/Myformhook';
+// import Fullvalidationform from './pages/Fullvalidationform';
+// import Myuseformikform from './Componets/Myuseformikform';
+// import Simpalform from './Componets/Simpalform';
+import FormikUI from './Componets/FormikUI';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -34,7 +38,10 @@ root.render(
     {/* <Contactform/> */}
     {/* <Employee/>
     <Contactto/> */}
-    < Myformhook/>
+    {/* <Fullvalidationform/> */}
+    {/* <Simpalform/> */}
+    {/* <Myuseformikform/> */}
+    <FormikUI/>
     </React.StrictMode>
 );
 
