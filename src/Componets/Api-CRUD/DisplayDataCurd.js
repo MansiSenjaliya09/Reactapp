@@ -12,10 +12,8 @@ import { DataGrid } from '@mui/x-data-grid';
 
     const columns = [
         { field: 'id', headerName: 'ID', width: 300 },
-        { field: 'title', headerName: 'title', width: 130 ,
-      },
+        { field: 'title', headerName: 'title', width: 130},
         { field: 'description', headerName: 'description', width: 330 },
-       
         {
           field: "delete",
           headerName: "Delete",
@@ -40,7 +38,6 @@ import { DataGrid } from '@mui/x-data-grid';
           headerName: "Edit",
           width: 90,
           renderCell: (params) => {
-
             console.log(params);
              // you will find row info in params
             return (<button onClick={()=>{ data.setId(params.row.id) }}>Edit</button>)
@@ -63,8 +60,8 @@ import { DataGrid } from '@mui/x-data-grid';
       const [rows,setRows] = useState([])
       useEffect(  ()=> {
          getallData();
-      
       },[data])
+      
   return (
     <div style={{ height: 400, width: '100%' }}>
       <input type='text'  onChange={changeHandeler}/>

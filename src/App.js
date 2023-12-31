@@ -130,7 +130,7 @@ function App() {
           <Route path=':postId' element={<Postid />} /> 
         </Route> */}
 
-{/* ===============================AXIOS-Api-CRUD-FORM================================ */}
+{/* ===============================AXIOS-Api-CRUD-FORM-com================================ */}
            {/* <Route exact path="/" element={<CreatForm />}></Route>
           <Route path="/read" element={<Readdata />}></Route>
           <Route path="/update" element={<Updatedata />}></Route> */}

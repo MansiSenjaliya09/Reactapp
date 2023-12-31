@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import AddtoCardcontext from '../Context/AddtoCardcontext'
+import AddtoCardcontext from '../AddToCartTask/AddtoCardcontext'
 import  CardDetailsAdd from '../AddToCartTask/CardDetailsAdd'
 import { Box, Grid } from '@mui/material'
 
@@ -8,6 +8,7 @@ export default function ProductAddToCart() {
  console.log(cart);
   return (
     <Box sx={{ flexGrow: 1 }}>
+      <div>{cart.length}</div>
           <Grid container spacing={2}>
             {
                 data.map((value)=> {
@@ -16,7 +17,7 @@ export default function ProductAddToCart() {
             }
 
 </Grid>
-<div>{cart.length}</div>
+{/* <div>{cart.length}</div> */}
 </Box>
   )
 }

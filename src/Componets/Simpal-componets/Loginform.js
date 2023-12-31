@@ -27,6 +27,7 @@ export default function Loginform() {
             <input type='password' name='password'onChange={onChange}></input>
             <input type='password' name='confirmpassword'onChange={onChange}></input>
             <input type='submit' value="Save" />
+            <input  type='su'></input>
         </form>
    
 </>

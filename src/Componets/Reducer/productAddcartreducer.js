@@ -15,7 +15,7 @@ export default (state = initialState, { type, payload }) => {
     d.push({item:payload, count : 1});
   }
   else
-  {
+  { b
       let index = d.findIndex((v)=> {
         return v.item.id == payload.id;
       })
@@ -26,6 +26,7 @@ export default (state = initialState, { type, payload }) => {
           if(v.item.id == payload.id)
           {
             return { item: payload, count : v.count+1}
+          
           }
           else
           {

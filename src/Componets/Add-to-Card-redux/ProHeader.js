@@ -13,12 +13,12 @@ export default function ProHeader() {
       <li class="nav-item">
         <a class="nav-link" href="#">{prod.cart.length}</a>
       </li>
-      <li class="nav-item">
+      {/* <li class="nav-item">
         <a class="nav-link" href="#">Link 2</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Link 3</a>
-      </li>
+      </li> */}
     </ul>
   </div>
 </nav>

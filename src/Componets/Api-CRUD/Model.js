@@ -23,6 +23,7 @@ export default function Model(props) {
         })
         }
       },[props.id])
+
       const formHandler = (e)=> {
         setData({...data,[e.target.name] : e.target.value})
       }
@@ -33,7 +34,6 @@ export default function Model(props) {
         {
           url = `https://itchy-plum-caridea.cyclic.app/api/tutorials/${props.id}`;
           method ="PUT"
-
         }
           fetch(url,{
             method : method,

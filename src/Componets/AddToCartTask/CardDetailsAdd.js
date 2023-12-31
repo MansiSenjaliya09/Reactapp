@@ -6,10 +6,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
-import AddtoCardcontext from '../Context/AddtoCardcontext';
+import AddtoCardcontext from '../AddToCartTask/AddtoCardcontext';
 import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
-
-
 
 export default function CardDetailsAdd(props) {
     const { cart, setCart } = React.useContext(AddtoCardcontext);
@@ -56,7 +54,6 @@ export default function CardDetailsAdd(props) {
                 </CardContent>
                 <CardActions>
                     <Button size="small" onClick={addToCart}>Add To Cart</Button>
-
                 </CardActions>
             </Card>
         </Grid>

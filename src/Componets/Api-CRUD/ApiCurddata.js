@@ -7,11 +7,9 @@ import Appointment from './Appointment';
 function ApiCurddata() {
  const [data,setData] = useState([]);
  useEffect(()=> {
-  fetch("https://fakestoreapi.com/products").then(y=> {
-    return y.json()
-  }).then(y=> {
-    setData(y)
-  })
+  fetch("https://fakestoreapi.com/products")
+  .then(y=> { return y.json()})
+  .then(y=> {setData(y) })
 
  },[])
 
