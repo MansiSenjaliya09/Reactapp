@@ -14,7 +14,7 @@ const SimaplCRUDform2 = (props) => {
                 <td style={{ border: "none" }}>First Name </td>
               </th>
               <th>
-                <td style={{ border: "none" }}>Last Name: </td>
+                <td style={{ border: "none" }}>Last Name </td>
               </th>
               <th>
                 <td style={{ border: "none" }}>Email </td>
@@ -47,7 +47,7 @@ const SimaplCRUDform2 = (props) => {
                   return (
                     <tr>
                       <td>{item.fname}</td>
-                      <td>{item.title}</td>
+                      {/* <td>{item.title}</td> */}
                       <td>{item.lname}</td>
                       <td>{item.email}</td>
                       <td>{item.mobile}</td>

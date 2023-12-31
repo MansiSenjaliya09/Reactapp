@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
 import AddtoCardcontext from '../Context/AddtoCardcontext';
+import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 
 
 
@@ -36,6 +37,8 @@ export default function CardDetailsAdd(props) {
         setCart(myselectedItems);
     }
     return (
+        <>
+       
         <Grid item xs={4}>
             <Card sx={{ maxWidth: 345 }}>
                 <CardMedia
@@ -57,5 +60,6 @@ export default function CardDetailsAdd(props) {
                 </CardActions>
             </Card>
         </Grid>
+        </>
     );
 }

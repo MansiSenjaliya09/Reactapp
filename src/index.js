@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
@@ -28,57 +28,82 @@ import Maincompany from "./Componets/CRUD-task-com/Maincompany";
 import TailwindUiData from "./Componets/Tailwind-Ui/TailwindUiData";
 import SimaplCRUDform from "./Componets/CRUD-task-com/SimaplCRUDform";
 import CreatForm from "./Componets/Axios-api-CRUD/CreatForm";
+import UserUsecustomhook from "./Componets/Customhook/UserUseCustomhook";
+import Test from "./Class-Componets/Test";
 
+const OtherComponent = React.lazy(() => import('./Componets/Simpal-componets/Loginform'));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App/>
+   <React.StrictMode>
+      <App />
 
 {/* ======================================React-Error-Boundaries============================================== */}
-    {/* <ErrorBoundary> */}
+      {/* <ErrorBoundary> */}
 
-    <Provider store={store}>
-{/*========================================Redux========================================================*/}
-   {/* <CounteRedux/> */}
+      <Provider store={store}>
+
+{/* ========================================Lazy-Loading-TASK================================================ */}
+         {/* <Suspense fallback={<div>Loading.........</div>}>
+            <OtherComponent />
+         </Suspense> */}
+         
+ {/*========================================Redux========================================================*/}
+         {/* <CounteRedux/> */}
 
 {/*=========================================Api-Redux===================================================== */}
-   {/* <ProductRedux/> */}
+         {/* <ProductRedux/> */}
 
 
-   {/* <UserRedux/> */}
+         {/* <UserRedux/> */}
 
 {/*========================================SAGA-NORMAL-Api===================================================  */}
-   {/* <CounterSaga/> */}
-   {/* <Apicallreduxsaga/> */}
-   {/* <ApiConnectsaga/>
-   <ApiConnectsaga2/> */}
+         {/* <CounterSaga/> */}
+         {/* <Apicallreduxsaga/> */}
+         {/* <ApiConnectsaga/>
+          <ApiConnectsaga2/> */}
 
-   {/* <AddToCart/> */}
-   {/* <RequireAuthrouting/> */}
-   {/* <ProHeader/>
-   <ProductAddCart/> */}
-   {/* <ApiCurddata/> */}
-   {/* <BuggyCounter/> */}
+
+{/* =============================================ADD-TO-CART====================================================== */}
+         <AddToCart/>
+
+{/* ========================================Routing-task-Signup-Signin============================================== */}
+         {/* <RequireAuthrouting/> */}
+
+
+         {/* <ProHeader/>
+            <ProductAddCart/> */}
+         {/* <ApiCurddata/> */}
+         {/* <BuggyCounter/> */}
 {/*==============================================Company-crud==================================================  */}
-   {/* <Maincompany/> */}
+         {/* <Maincompany/> */}
 
-{/*=============================================Simapl-crud===================================================  */}
-   {/* <SimaplCRUDform/> */}
+{/*=============================================Simapl-crud-ravu===================================================  */}
+         {/* <SimaplCRUDform/> */}
 
 
 {/*======================================Tailwind-Ui===========================================================*/}
-  {/* <TailwindUiData/> */}
+         {/* <TailwindUiData/> */}
 
-</Provider>
+{/* =====================================Use-Custom-HOOK============================================================== */}
+         {/* <UserUsecustomhook/> */}
+
+
+      </Provider>
 
 {/* ======================================Store-1-task================================================= */}
-{/* <Provider store={store1}>
-<CounterReduxTooltip/>
-<PostApidataThunk/>
-</Provider> */}
+      {/* <Provider store={store1}>
+            <CounterReduxTooltip/>
+            <PostApidataThunk/>
+      </Provider> */}
 
-  </React.StrictMode>
+{/* ====================================PURE-CLASS-Componets======================================================== */}
+   {/* <Test/> */}
+   
+
+
+
+   </React.StrictMode>
 );
 
 

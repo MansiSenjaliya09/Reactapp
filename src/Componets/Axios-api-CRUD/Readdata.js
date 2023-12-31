@@ -4,11 +4,9 @@ import { Link } from "react-router-dom";
 
 const Readdata = () => {
   const [data, setData] = useState([]);
-  const [tabledark, setTableDark] = useState("");
-
   function getData() {
     axios
-      .get("https://62a59821b9b74f766a3c09a4.mockapi.io/crud-youtube")
+      .get("https://64a6a3c8096b3f0fcc803137.mockapi.io/crud-axios")
       .then((res) => {
         setData(res.data);
       });
@@ -16,18 +14,23 @@ const Readdata = () => {
 
   function handleDelete(id) {
     axios
-      .delete(`https://62a59821b9b74f766a3c09a4.mockapi.io/crud-youtube/${id}`)
+      .delete(`https://64a6a3c8096b3f0fcc803137.mockapi.io/crud-axios/${id}`)
       .then(() => {
         getData();
       });
   }
 
-  const setToLocalStorage = (id, name, email,pass) => {
+  const setToLocalStorage = (id, name,price,qty) => {
     localStorage.setItem("id", id);
     localStorage.setItem("name", name);
-    localStorage.setItem("email", email);
-    localStorage.setItem("pass", pass);
+    localStorage.setItem("price", price);
+    localStorage.setItem("qty", qty);
   };
+
+  let total = data.reduce(function(pre,value){
+    return pre + value.price * value.qty;
+  },0);
+  console.log(total);
 
   useEffect(() => {
     getData();
@@ -36,28 +39,21 @@ const Readdata = () => {
   return (
     <>
       <div className="form-check form-switch">
-        {/* <input
-          className="form-check-input"
-          type="checkbox"
-          onClick={() => {
-            if (tabledark === "table-dark") setTableDark("");
-            else setTableDark("table-dark");
-          }}
-        /> */}
       </div>
       <div className="d-flex justify-content-between m-2">
         <h2>Read Operation</h2>
         <Link to="/">
-          <button className="btn btn-secondary">Create</button>
+          <button className="btn btn-primary">Create</button>
         </Link>
       </div>
-      <table className={`table ${tabledark}`}>
+      <table className= 'table'>
         <thead>
           <tr>
             <th scope="col">id</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            {/* <th scope="col">Password</th> */}
+            <th scope="col"> coin Name</th>
+            <th scope="col"> Price</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Total</th>
             <th scope="col"></th>
             <th scope="col"></th>
           </tr>
@@ -69,28 +65,29 @@ const Readdata = () => {
                 <tr>
                   <th scope="row">{eachData.id}</th>
                   <td>{eachData.name}</td>
-                  <td>{eachData.email}</td>
-                  {/* <td>{eachData.pass}</td> */}
+                  <td>{eachData.price}</td>
+                  <td>{eachData.qty}</td>
+                  <td>{eachData.qty * eachData.price}</td>
                   <td>
                     <Link to="/update">
                       <button
-                        className="btn-success"
+                        className="btn btn-primary"
                         onClick={() =>
                           setToLocalStorage(
                             eachData.id,
                             eachData.name,
-                            eachData.email,
-                            eachData.pass
+                            eachData.price,
+                            eachData.qty
                           )
                         }
                       >
-                        Edit{" "}
+                        Edit
                       </button>
                     </Link>
                   </td>
                   <td>
                     <button
-                      className="btn-danger"
+                      className="btn btn-primary"
                       onClick={() => handleDelete(eachData.id)}
                     >
                       Delete

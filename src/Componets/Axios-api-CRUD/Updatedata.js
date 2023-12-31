@@ -6,26 +6,26 @@ import { Link, useNavigate } from "react-router-dom";
 const Updatedata = () => {
   const [id, setId] = useState(0);
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [pass, setpass] = useState("");
+  const [price, setPrice] = useState("");
+  const [qty, setqty] = useState("");
 
   const navigate = useNavigate();
 
   useEffect(() => {
     setId(localStorage.getItem("id"));
     setName(localStorage.getItem("name"));
-    setEmail(localStorage.getItem("email"));
-    setEmail(localStorage.getItem("pass"));
+    setPrice(localStorage.getItem("price"));
+    setqty(localStorage.getItem("qty"));
   }, []);
 
   const handleUpdate = (e) => {
     e.preventDefault();
     console.log("Id...", id);
     axios
-      .put(`https://62a59821b9b74f766a3c09a4.mockapi.io/crud-youtube/${id}`, {
+      .put(`https://64a6a3c8096b3f0fcc803137.mockapi.io/crud-axios/${id}`, {
         name: name,
-        email: email,
-        pass:pass,
+        price:price,
+        qty:qty,
       })
       .then(() => {
         navigate("/read");
@@ -37,33 +37,32 @@ const Updatedata = () => {
       <h2>Update</h2>
       <form>
         <div className="mb-3">
-          <label className="form-label">Name</label>
+          <label className="form-label">Coin Name</label>
           <input
             type="text"
             className="form-control"
             value={name}
-            onChange={(e) => setName(e.target.value)}
           />
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Email address</label>
+          <label className="form-label"> Price</label>
           <input
-            type="email"
+            type="text"
             className="form-control"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
           />
         </div>
-        {/* <div className="mb-3">
-          <label className="form-label">password</label>
+        <div className="mb-3">
+          <label className="form-label">Qty</label>
           <input
-            type="password"
+            type="text"
             className="form-control"
-            value={pass}
-            onChange={(e) => setpass(e.target.value)}
+            value={qty}
+            onChange={(e) => setqty(e.target.value)}
           />
-        </div> */}
+        </div>
 
         <button
           type="submit"

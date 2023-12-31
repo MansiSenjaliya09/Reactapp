@@ -6,19 +6,18 @@ import { Link } from "react-router-dom";
 export default function CreatForm() {
   
    const [name,setname] = useState("")
-   const [email,setemail] =useState("")
-   const [pass,setpass] =useState("");
+   const [price, setPrice] =useState("")
+   const [qty,setqty] =useState("");
    
    const history = useNavigate();
 
    const handelsubmit = (e) =>{
     e.preventDefault();
-    console.log("clciekd");
     axios
-      .post("https://62a59821b9b74f766a3c09a4.mockapi.io/crud-youtube", {
+      .post("https://64a6a3c8096b3f0fcc803137.mockapi.io/crud-axios", {
         name: name,
-        email: email,
-        pass :pass,
+        price:price,
+        qty:qty,
       })
       .then(() => {
         history("/read");
@@ -36,19 +35,19 @@ export default function CreatForm() {
       </div>
             <form>
             <div className="mb-3">
-                    <label  className="form-label">Name</label>
+                    <label  className="form-label">Coin Name</label>
                     <input type="text" className="form-control" onChange={(e)=>setname(e.target.value)}/>
                 </div>
                 <div classNameName="mb-3">
-                    <label  className="form-label">Email address</label>
-                    <input type="email" className="form-control" aria-describedby="emailHelp"
-                    onChange={(e)=>setemail(e.target.value)} />
+                    <label  className="form-label"> Price</label>
+                    <input type="text" className="form-control" aria-describedby="emailHelp"
+                    onChange={(e)=>setPrice(e.target.value)} />
                 </div>
                 
-                {/* <div className="mb-3">
-                    <label  className="form-label">Password</label>
-                    <input type="password" className="form-control" onChange={(e)=>setpass(e.target.value)} />
-                </div> */}
+                <div className="mb-3">
+                    <label  className="form-label">Qty</label>
+                    <input type="text" className="form-control" onChange={(e)=>setqty(e.target.value)} />
+                </div>
                 <button type="submit" className="btn btn-primary" onClick={handelsubmit}>Submit</button>
             </form>
             </div>

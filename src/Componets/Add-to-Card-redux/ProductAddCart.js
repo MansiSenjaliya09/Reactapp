@@ -19,6 +19,8 @@ export default function ProductAddCart() {
 
     console.log(produ);
   return (
+    <>
+   
     <div className='row'>
       {
         produ.data.map((value)=>{
@@ -39,5 +41,6 @@ export default function ProductAddCart() {
         })
       }
     </div>
+    </>
   )
 }
